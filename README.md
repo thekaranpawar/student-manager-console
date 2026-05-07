@@ -67,8 +67,6 @@ Upon execution, the program initializes with sample data and presents a menu-dri
 7. Exit
 ```
 
-Users interact by entering the corresponding numeric option.
-
 ---
 
 ## 📄 Report Card Feature
