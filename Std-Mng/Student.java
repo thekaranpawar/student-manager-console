@@ -12,6 +12,29 @@ public class Student{
         this.course = course;
         this.grade = grade;
     }
+    public String getResult(){
+
+        if(grade >= 35){
+            return "PASS";
+        }else{
+            return "FAIL";
+        }
+    }
+    public String getPerformance(){
+
+        if(grade >= 90){
+            return "Excellent";
+        }
+        else if(grade >= 75){
+            return "Good";
+        }
+        else if(grade >= 50){
+            return "Average";
+        }
+        else{
+            return "Poor";
+        }
+    }
     public void printInfo(){
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);

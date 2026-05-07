@@ -13,6 +13,7 @@ public class Main{
 
         studentList.add(new Student(nextId++, "Stark", 20, "Computer Science", 92.5));
         studentList.add(new Student(nextId++, "Jemmy", 22, "Mechanical", 78.0));
+        studentList.add(new Student(nextId++, "John", 20, "Graphics", 33.0));
         studentList.add(new Student(nextId++, "Charlie", 21, "Computer Science", 73.0));
         studentList.add(new Student(nextId++, "Daren", 19, "Electronics", 88.5));
 
@@ -28,6 +29,7 @@ public class Main{
             System.out.println("4. Update student");
             System.out.println("5. Delete student");
             System.out.println("6. Exit");
+            System.out.println("7. Generate report card");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -46,8 +48,10 @@ public class Main{
             } else if (choice == 6){
                 System.out.println("Goodbye!");
                 break;
+            } else if(choice == 7){
+                generateReportCard(scanner);
             } else{
-                System.out.println("Wrong choice! Please enter 1 to 6.");
+                System.out.println("Wrong choice! Please enter 1 to 7.");
             }
         }
     }
@@ -199,4 +203,47 @@ public class Main{
             System.out.println("Delete cancelled.");
         }
     }
+
+    static void generateReportCard(Scanner scanner){
+
+        System.out.println();
+        System.out.println("===== REPORT CARD =====");
+
+        System.out.print("Enter student ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        Student foundStudent = null;
+
+        for(Student s : studentList){
+
+            if(s.id == id){
+
+                foundStudent = s;
+                break;
+            }
+        }
+
+        if(foundStudent == null){
+
+            System.out.println("Student not found.");
+            return;
+        }
+
+        System.out.println();
+        System.out.println("========== STUDENT REPORT CARD ==========");
+
+        System.out.println("Student ID   : " + foundStudent.id);
+        System.out.println("Name         : " + foundStudent.name);
+        System.out.println("Age          : " + foundStudent.age);
+        System.out.println("Course       : " + foundStudent.course);
+        System.out.println("Grade        : " + foundStudent.grade);
+
+        System.out.println("Result       : " + foundStudent.getResult());
+
+        System.out.println("Performance  : " + foundStudent.getPerformance());
+
+        System.out.println("=========================================");
+    }
+
 }
