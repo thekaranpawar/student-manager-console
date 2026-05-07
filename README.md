@@ -94,13 +94,6 @@ The generated report card includes:
 | 50 – 74      | Average      |
 | Below 50     | Poor         |
 
-### ✅ Result Criteria
-
-| Grade | Result |
-| ----- | ------ |
-| 40+   | PASS   |
-| < 40  | FAIL   |
-
 ---
 
 ## ▶️ Getting Started
